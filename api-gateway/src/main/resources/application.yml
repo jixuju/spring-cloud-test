@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 50001
+  ssl:
+    key-store: classpath:server.keystore
+    key-store-password: 123456
+#    keyStoreType: PKCS12
+#    keyAlias: 214059054660999
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+#Hystrix超时时间: 默认1秒
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 51000
+
+zuul:
+  routes:
+    user:
+      path: /provider/**
+      serviceId: provider-service
+      stripPrefix: false
+    admin:
+      path: /feign/**
+      serviceId: feign-service
+      stripPrefix: false
+    order:
+      path: /ribbon/**
+      serviceId: ribbon-service
+      stripPrefix: false

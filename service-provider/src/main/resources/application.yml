@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: provider-service
+server:
+  port: 20001
+#  ssl:
+#    key-store: classpath:server.keystore
+#    key-store-password: 123456
+#    #keyStoreType: PKCS12
+#    keyAlias: server
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#    hostname: localhost
+#    secure-port: ${server.port}
+    #secure-port-enabled: true
+    #non-secure-port-enabled: false
+#    metadata-map.hostname: ${eureka.instance.hostname}
+#    metadata-map.securePort: ${server.port}
+    #home-page-url: https://${eureka.instance.hostname}:${server.port}/
+    #status-page-url: https://${eureka.instance.hostname}:${server.port}/admin/info
+    #esecure-virtual-host-name: ${spring.application.name}
+
+
+
+
