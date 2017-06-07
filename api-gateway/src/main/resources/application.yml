@@ -7,7 +7,7 @@ server:
     key-store: classpath:server.keystore
     key-store-password: 123456
 #    keyStoreType: PKCS12
-#    keyAlias: 214059054660999
+#    keyAlias: server
 
 eureka:
   client:
