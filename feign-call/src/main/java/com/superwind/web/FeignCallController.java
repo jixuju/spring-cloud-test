@@ -1,5 +1,6 @@
 package com.superwind.web;
 
+import com.superwind.pojo.QryUserRsp;
 import com.superwind.pojo.UserInfo;
 import com.superwind.service.FeignCallService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,10 @@ public class FeignCallController {
     @PostMapping("/feign/addUser")
     public int addUser(@RequestBody UserInfo userInfo) {
         return feignCallService.addUser(userInfo);
+    }
+
+    @PostMapping("/feign/qryUser")
+    public QryUserRsp qryUser(@RequestBody UserInfo userInfo) {
+        return feignCallService.qryUser(userInfo);
     }
 }

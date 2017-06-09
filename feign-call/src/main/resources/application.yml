@@ -12,14 +12,15 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-
+#feign.hystrix.enabled: false
+#feign.retry.enabled: false
 hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 51000
+ command:
+   default:
+     execution:
+       isolation:
+         thread:
+           timeoutInMilliseconds: "60000"
 
 #provider-service:
 #  ribbon:

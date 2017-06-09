@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @Component
-public class UserServiceHystrix implements IUserService{
+public class UserServiceHystrix implements IAddUserService{
     @Override
     public int addUser(@RequestBody UserInfo userInfo) {
         return 0;
