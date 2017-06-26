@@ -21,7 +21,3 @@ hystrix:
        isolation:
          thread:
            timeoutInMilliseconds: "60000"
-
-#provider-service:
-#  ribbon:
-#    listOfServers: localhost:18443

@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: config-client
+server:
+  port: 8001
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+
+
+
+
+
