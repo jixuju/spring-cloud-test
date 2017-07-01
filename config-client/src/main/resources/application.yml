@@ -3,6 +3,21 @@ spring:
     name: config-client
 server:
   port: 8001
+endpoints:
+  sensitive: true
+  health:
+    sensitive: false
+  metrics:
+    sensitive: false
+  info:
+    sensitive: false
+security:
+  user:
+    name: user
+    password: password
+  basic:
+    path: /configprops
+    enabled: true
 eureka:
   instance:
     prefer-ip-address: true

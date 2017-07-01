@@ -5,10 +5,10 @@ spring:
 #  profiles.active: native
 #  cloud.config.server.native.searchLocations: classpath:/config
 #默认使用git配置
-  spring.cloud.config.server.git.uri=https://github.com/jixuju/spring-cloud-test
-  spring.cloud.config.server.git.searchPaths=/config-repo
-  spring.cloud.config.server.git.username=username
-  spring.cloud.config.server.git.password=password
+  cloud.config.server.git.uri: https://github.com/jixuju/spring-cloud-test
+  cloud.config.server.git.searchPaths: /config-repo
+  cloud.config.server.git.username: user
+  cloud.config.server.git.password: password
 server:
   port: 7001
 
