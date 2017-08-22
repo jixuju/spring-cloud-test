@@ -24,13 +24,25 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 51000
+            timeoutInMilliseconds: 60000
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 60000
+  ConnectTimeout: 20000
+  MaxAutoRetries: 1
+  MaxAutoRetriesNextServer: 2
 
 zuul:
+#  host:
+#    connect-timeout-millis: 30000
+#    socket-timeout-millis: 30000
   routes:
     user:
       path: /provider/**
       serviceId: provider-service
+#      url: http://localhost:20001
       stripPrefix: false
     admin:
       path: /feign/**

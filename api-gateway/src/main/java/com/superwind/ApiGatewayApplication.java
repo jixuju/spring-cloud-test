@@ -1,17 +1,19 @@
 package com.superwind;
 
+import com.superwind.conf.AddResponseHeaderFilter;
+import com.superwind.conf.AuthPreFilter;
+import com.superwind.conf.ErrorFilter;
+import com.superwind.conf.QueryParamPreFilter;
 import org.apache.catalina.Context;
 import org.apache.catalina.connector.Connector;
 import org.apache.tomcat.util.descriptor.web.SecurityCollection;
 import org.apache.tomcat.util.descriptor.web.SecurityConstraint;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
-import org.springframework.boot.context.embedded.Ssl;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
+import org.springframework.cloud.netflix.zuul.EnableZuulServer;
 import org.springframework.context.annotation.Bean;
 
 @SpringCloudApplication
@@ -61,9 +63,29 @@ public class ApiGatewayApplication {
 	private Connector initiateHttpConnector() {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 		connector.setScheme("http");
-		connector.setPort(8880);
+		connector.setPort(8080);
 		connector.setSecure(false);
 		connector.setRedirectPort(50001);
 		return connector;
+	}
+
+	@Bean
+	public AddResponseHeaderFilter addResponseHeaderFilter(){
+		return new AddResponseHeaderFilter();
+	}
+
+	@Bean
+	public AuthPreFilter authFilter(){
+		return new AuthPreFilter();
+	}
+
+	@Bean
+	public QueryParamPreFilter queryParamPreFilter(){
+		return new QueryParamPreFilter();
+	}
+
+	@Bean
+	public ErrorFilter errorFilter(){
+		return new ErrorFilter();
 	}
 }
