@@ -3,6 +3,10 @@ spring:
     name: provider-service
 server:
   port: 20001
+eureka:
+  client:
+    healthcheck:
+      enabled: true
 #  ssl:
 #    key-store: classpath:server.keystore
 #    key-store-password: 123456
