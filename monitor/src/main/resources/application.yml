@@ -1,10 +1,8 @@
-spring:
-  application:
-    name: monitor
 server:
-  port: 60001
+  port: 60003
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:10001/eureka/
+info:
+  spring-cloud-test:
+    description: monitor
+    url: https://github.com/jixuju/spring-cloud-test
+    build-by: superwind20

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: monitor
+  boot:
+    admin:
+      client:
+        enabled: true
+      turbine:
+        url: http://localhost:60002/turbine.stream
+        clusters: PROVIDER-SERVICE,RIBBON-SERVICE,FEIGN-SERVICE
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
