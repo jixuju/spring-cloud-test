@@ -1,0 +1,9 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
+turbine:
+  aggregator:
+    clusterConfig: PROVIDER-SERVICE,FEIGN-SERVICE,RIBBON-SERVICE
+  appConfig: provider-service,feign-service,ribbon-service
+  clusterNameExpression: metadata['cluster']

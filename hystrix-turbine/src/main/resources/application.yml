@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: hystrix-turbine
+server:
+  port: 60002
