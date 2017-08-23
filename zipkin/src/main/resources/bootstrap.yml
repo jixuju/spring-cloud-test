@@ -1,0 +1,18 @@
+zipkin:
+  ui:
+    environment: zipkin
+  storage:
+    type: mysql
+    mysql:
+      host: jiangxj-02.com
+      port: 3306
+      db: zipkin
+      username: zipkin
+      password: zipkin
+      max-active: 10
+      use-ssl: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
