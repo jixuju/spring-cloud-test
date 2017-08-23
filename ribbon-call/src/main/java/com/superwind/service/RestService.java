@@ -16,7 +16,7 @@ public class RestService {
     @Autowired
     private RestTemplate restTemplate;
 
-    /*@HystrixCommand(fallbackMethod = "fallbackRemoteCall")*/
+    @HystrixCommand(fallbackMethod = "fallbackRemoteCall")
     public <T1,T2> T1 remoteCall(String apiName, T2 reqObj, Class<T1> rspType, Class... parameterClasses) {
         String url = "http://provider-service" + apiName;
         //设置请求的header
