@@ -8,11 +8,14 @@ server:
     key-store-password: 123456
 #    keyStoreType: PKCS12
 #    keyAlias: server
-
+endpoints:
+  sensitive: false
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:10001/eureka/
+    healthcheck:
+      enabled: true
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
@@ -24,13 +27,13 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 3000
 
 ribbon:
   eureka:
     enabled: true
-  ReadTimeout: 60000
-  ConnectTimeout: 20000
+  ReadTimeout: 6000
+  ConnectTimeout: 2000
   MaxAutoRetries: 1
   MaxAutoRetriesNextServer: 2
 
