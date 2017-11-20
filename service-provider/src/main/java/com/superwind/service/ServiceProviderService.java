@@ -26,12 +26,13 @@ public class ServiceProviderService {
         return 1;
     }
 
-    public QryUserRsp qryUser(UserInfo userInfo) {
+    public QryUserRsp qryUser(UserInfo userInfo) throws Exception {
         System.out.println("qryUser id="+userInfo.getId());
         QryUserRsp qryUserRsp = new QryUserRsp();
         List<UserInfo> userInfoList = new ArrayList<>();
         userInfoList.add(userInfo);
         qryUserRsp.setUserInfoList(userInfoList);
+//        throw new Exception("sdf");
         return qryUserRsp;
     }
 }

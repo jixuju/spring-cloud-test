@@ -1,5 +1,6 @@
 package com.superwind.web;
 
+import com.superwind.pojo.QryUserRsp;
 import com.superwind.pojo.UserInfo;
 import com.superwind.service.RibbonCallService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,10 @@ public class RibbonCallController {
     @PostMapping("/ribbon/addUser")
     public int addUser(@RequestBody UserInfo userInfo) {
         return ribbonCallService.addUser(userInfo);
+    }
+
+    @PostMapping("/provider/qryUser")
+    public QryUserRsp qryUser(@RequestBody UserInfo userInfo) {
+        return ribbonCallService.qryUser(userInfo);
     }
 }

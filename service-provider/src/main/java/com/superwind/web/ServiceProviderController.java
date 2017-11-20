@@ -20,7 +20,7 @@ public class ServiceProviderController {
     }
 
     @PostMapping("/provider/qryUser")
-    public QryUserRsp qryUser(@RequestBody UserInfo userInfo) {
+    public QryUserRsp qryUser(@RequestBody UserInfo userInfo) throws Exception {
         return serviceProviderService.qryUser(userInfo);
     }
 }

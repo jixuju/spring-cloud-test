@@ -8,7 +8,7 @@ spring:
   sleuth:
     sampler:
       #采样率, 默认0.1
-      percentage: 1.0
+      percentage: 0.2
 server:
   port: 20001
 endpoints:
@@ -19,6 +19,13 @@ common:
   ops:
     accessLog: db
     errorLog: db
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
 
 
 
