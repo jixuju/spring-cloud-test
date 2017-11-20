@@ -3,7 +3,8 @@ spring:
     name: ribbon-service
 server:
   port: 30001
-
+endpoints:
+  sensitive: false
 eureka:
   client:
     serviceUrl:

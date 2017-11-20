@@ -7,3 +7,5 @@ spring:
   application.name: config-server
   profiles:
     active: test
+endpoints:
+  sensitive: false

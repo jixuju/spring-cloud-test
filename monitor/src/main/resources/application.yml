@@ -1,8 +1,9 @@
 server:
   port: 60003
-
 info:
   spring-cloud-test:
     description: monitor
     url: https://github.com/jixuju/spring-cloud-test
     build-by: superwind20
+endpoints:
+  sensitive: false

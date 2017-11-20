@@ -4,7 +4,7 @@ spring:
 server:
   port: 8001
 endpoints:
-  sensitive: true
+  sensitive: false
   health:
     sensitive: false
   metrics:
