@@ -3,9 +3,11 @@ spring:
     name: eureka-server
 server:
   port: 10002
+endpoints:
+  sensitive: false
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     serviceUrl:
       defaultZone: http://localhost:10001/eureka/,http://h3:10003/eureka/

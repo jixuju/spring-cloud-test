@@ -1,8 +1,10 @@
 server:
   port: 10003
+endpoints:
+  sensitive: false
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true
     fetch-registry: false
     serviceUrl:
       defaultZone: http://localhost:10001/eureka/,http://h2:10002/eureka/

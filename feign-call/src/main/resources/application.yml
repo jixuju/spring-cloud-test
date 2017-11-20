@@ -10,6 +10,8 @@ spring:
       percentage: 1.0
 server:
   port: 40001
+endpoints:
+  sensitive: false
 
 eureka:
   client:
@@ -29,4 +31,4 @@ hystrix:
      execution:
        isolation:
          thread:
-           timeoutInMilliseconds: "1000"
+           timeoutInMilliseconds: "60000"
