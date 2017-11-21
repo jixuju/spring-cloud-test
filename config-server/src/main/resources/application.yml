@@ -4,8 +4,10 @@ server:
 encrypt:
   key: enkey
 spring:
-  application.name: config-server
+  application:
+    name: config-server
   profiles:
     active: test
+  jackson.serialization.indent_output: true
 endpoints:
   sensitive: false

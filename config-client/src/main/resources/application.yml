@@ -1,6 +1,8 @@
 spring:
   application:
     name: config-client
+  profiles:
+    active: test
 server:
   port: 8001
 endpoints:

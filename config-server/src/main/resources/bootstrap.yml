@@ -5,18 +5,15 @@ security:
     password: password
   basic:
     enabled: true
-# 对称加密Key
-encrypt:
-  key: enkey
 eureka:
   client:
-    enabled: false
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:10001/eureka/
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 spring:
-  application.name: config-server
-  jackson.serialization.indent_output: true
 #开启本地配置
 #  profiles.active: native
 #  cloud.config.server.native.searchLocations: classpath:/config
@@ -25,11 +22,11 @@ spring:
   cloud.config.server.git.searchPaths: /config-repo
   cloud.config.server.git.username: username
   cloud.config.server.git.password: password
-#  cloud.config.server.bootstrap: true
   cloud.config.server.git.cloneOnStart: true
   cloud.config.server.git.force-pull: true
+  cloud.config.server.encrypt.enabled: true
   cloud.config.enabled: true
-  cloud.config.label: develop
+  cloud.config.server.bootstrap: true
+  cloud.config.profile: dev
+  cloud.config.label: master
   cloud.config.uri: http://user:password@localhost:7001
-  bus:
-    enabled: true

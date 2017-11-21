@@ -1,12 +1,3 @@
-spring:
-  cloud:
-    config:
-      enabled: true
-      discovery:
-        enabled: true
-        service-id: config-server
-      profile: test
-      label: master
 eureka:
   client:
     enabled: true
@@ -15,3 +6,15 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+spring:
+  cloud:
+    config:
+      enabled: true
+      # 使用discovery方式
+#      discovery:
+#        enabled: true
+#        service-id: CONFIG-SERVER
+      profile: test
+      label: master
+      # 使用uri方式
+      uri: http://user:password@localhost:7001
