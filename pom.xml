@@ -19,6 +19,7 @@
         <module>monitor</module>
         <module>config-server</module>
         <module>config-client</module>
+        <module>config-bus</module>
         <module>hystrix-dashboard</module>
         <module>hystrix-turbine</module>
         <module>zipkin</module>

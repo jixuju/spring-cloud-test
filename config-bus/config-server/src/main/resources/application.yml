@@ -1,28 +1,21 @@
+server:
+  port: 7001
 spring:
   application:
-    name: config-client
+    name: config-server
   profiles:
     active: test
   jackson.serialization.indent_output: true
-server:
-  port: 8001
 endpoints:
   sensitive: false
-  health:
-    sensitive: false
-  metrics:
-    sensitive: false
-  info:
-    sensitive: false
+## 刷新时，关闭安全验证
+management:
+  security:
+    enabled: true
+# 开启安全验证
 security:
   user:
     name: user
     password: password
   basic:
-    path: /configprops
     enabled: true
-
-
-
-
-
