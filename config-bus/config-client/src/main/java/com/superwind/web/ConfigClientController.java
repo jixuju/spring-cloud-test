@@ -22,4 +22,10 @@ public class ConfigClientController {
         System.out.println("person.name="+name+" in the config-repo");
         return name;
     }
+
+    @PostMapping("/config/delUser")
+    public Integer delUser() {
+        System.out.println("del person.name="+name);
+        return 1;
+    }
 }

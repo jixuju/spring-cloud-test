@@ -7,15 +7,16 @@ spring:
     active: test
   jackson.serialization.indent_output: true
 endpoints:
-  sensitive: false
-## 刷新时，关闭安全验证
+  sensitive: true
+## 刷新时，开启安全验证
 management:
   security:
     enabled: true
-# 开启安全验证
+# 设置安全验证
 security:
   user:
     name: user
     password: password
   basic:
-    enabled: true
+    enabled: false
+
