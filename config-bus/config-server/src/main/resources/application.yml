@@ -8,6 +8,8 @@ spring:
   jackson.serialization.indent_output: true
 endpoints:
   sensitive: true
+  health:
+    sensitive: false
 ## 刷新时，开启安全验证
 management:
   security:
