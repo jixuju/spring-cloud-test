@@ -7,3 +7,11 @@ info:
     build-by: superwind20
 endpoints:
   sensitive: false
+security:
+  user:
+    name: user
+    password: 123456
+spring:
+  boot:
+    admin:
+      context-path: /admin

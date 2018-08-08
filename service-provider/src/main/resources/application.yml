@@ -12,7 +12,25 @@ spring:
 server:
   port: 20001
 endpoints:
-  sensitive: false
+  sensitive: true
+  health:
+    sensitive: false
+  metrics:
+    sensitive: false
+  info:
+    sensitive: false
+management:
+  security:
+    enabled: false
+#  port: 20002
+#  context-path: /admin
+security:
+  user:
+    name: user
+    password: 123456
+  basic:
+    path: /configprops
+    enabled: true
 common:
   test-a: test-a
   test-b: test-b
@@ -26,6 +44,7 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 30
+
 
 
 
